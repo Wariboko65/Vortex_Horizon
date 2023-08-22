@@ -1,0 +1,398 @@
+:root {
+    --navBack: rgb(18, 20, 20);
+    --box: rgba(18, 20, 20, 0.8);
+    --back: rgb(0, 0, 2);
+    --black: rgb(30, 30, 30);
+    --purple: rgb(72, 20, 44);
+    --lpurple: rgba(72, 20, 44, 0.5);
+    --white: rgb(255, 255, 255);
+    --lwhite: rgba(255, 255, 255, 0.8);
+    --ltwhite: rgba(255, 255, 255, 0.5);
+    --smallfont: 0.75rem;
+    --font: 1rem;
+    --bigfont: 1.5rem;
+    --biggerfont: 2rem;
+    --weight: 600;        
+    --bweight: 800;        
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: var(--back);
+    color: var(--white);
+    font-family: "segoe ui", Arial, Helvetica, sans-serif;
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav ul:first-child {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+nav ul:first-child a {
+    color: var(--white);
+    text-decoration: none;
+}
+nav ul:first-child li {
+    padding: 20px;
+}
+nav ul:first-child li img {
+   height: 30px;
+}
+.bi-list {
+    font-size: 40px;
+    color: var(--lwhite);
+    margin: 0 20px;
+    cursor: pointer;
+}
+nav ul:nth-child(2) {
+    display: none;
+}
+section {
+    min-width: 90%;
+    width: 90%;
+    margin-inline: auto;
+}
+#home {
+    text-align: center;
+    margin-block-start: 100px;
+    position: relative;
+}
+#home::before {
+    content: "";
+    position: absolute;
+    height: 90%;
+    width: 90%;
+    left: 50%;
+    /* filter: blur(200px); */
+    transform: translatex(-50%);
+    z-index: -1;
+    /* background: var(--purple); */
+}
+#home > p:first-child {
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+}
+#home > p:nth-child(2) {
+    margin-block-start: -35px;
+}
+#home > p:first-child::after {
+    content: "";
+    height: 120px;
+    width: 130px;
+    background: var(--purple);
+    border-radius: 50%;
+    top: -20px;
+    right: -60px;
+    z-index: -1;
+    position: absolute;
+}
+#home > p:first-child,
+#home > p:nth-child(2) {
+    font-size: var(--biggerfont);
+    font-weight: var(--weight)
+}
+.mute {
+    color: var(--ltwhite);
+}
+.muted {
+    color: var(--lwhite);
+}
+.hero > input {
+    padding: 8px 16px;
+    border: none;
+    border-bottom: 2px solid var(--white);
+    outline: none;
+    background: transparent;
+    color: var(--lwhite);
+    transition: border 0.5s;
+}
+.hero > input:focus-visible {
+    border-bottom: 2px solid var(--purple);
+}
+button {
+    color: var(--lwhite);
+    background: var(--purple);
+    border: none;
+    user-select: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    margin-inline: 20px;
+    cursor: pointer;
+    transition: box-shadow 0.5s;
+}
+button:hover {
+    box-shadow: 0 5px 25px 0 var(--box) inset;
+}
+.hero {
+    display: inline-block;
+    height: 70px;
+}
+#emailErr {
+    font-size: 12px;
+    text-align: left;
+    padding: 0 10px;
+    color: tomato;
+    opacity: 0;
+    font-weight: var(--weight);
+    transition: opacity 1s;
+}
+#home > a {
+    text-decoration: none;
+    display: block;
+    color: var(--lwhite);
+    text-align: right;
+    margin-block-start: 50px;
+    margin-block-end: 20px;
+}
+.card-container {
+    background: var(--purple);
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: left;
+    color: var(--lwhite);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px 0 var(--box) inset;
+}
+.card1,
+.card2,
+.card3 {
+    background: var(--box);
+    padding: 10px 30px;
+    margin: 20px 10px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px 0 var(--box);
+}
+.card1 {
+    background: url("Media/Picture2_11zon.jpg");
+    background-size: cover;
+    position: relative;
+    isolation: isolate;
+    padding: 10px 50px;
+    cursor: pointer;
+}
+.card1::after {
+    content: "";
+    border-radius: 15px;
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: -1;
+}
+.card1 > p:first-child,
+.card2 > p:first-child,
+.card3 > p:first-child {
+    font-weight: var(--weight);
+    margin-block-end: -10px;
+    color: var(--white);
+}
+.card-container + p {
+    font-size: var(--bigfont);
+    font-weight: var(--weight);
+    margin-block-start: 60px;
+    text-align: left;
+}
+.brand-logo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.brand-logo > img {
+    height: 60px;
+}
+#about {
+    margin-block-start: 100px;
+}
+#about .about-image {
+    display: none;
+}
+.about-text > p:first-child {
+    font-size: var(--bigfont);
+    font-weight: var(--weight);
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+}
+.about-text > p:first-child::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 2px;
+    left: -4px;
+    background: var(--purple);
+    border-radius: 50%;
+    z-index: -1;
+}
+.about-text > a {
+    text-decoration: none;
+    color: var(--back);
+    background: var(--lwhite);
+    padding: 10px 20px;
+    border-radius: 15px;
+    margin-block-start: 30px;
+    display: inline-block;
+}
+.client > p:first-child,
+.revenue > p:first-child {
+    font-size: var(--biggerfont);
+    font-weight: var(--weight);
+    margin-block-end: -20px;
+}
+.num {
+    display: flex;
+    gap: 50px;
+    text-align: center;
+}
+#about {
+    position: relative;
+}
+#about::before {
+    content: "";
+    position: absolute;
+    height: 90%;
+    width: 90%;
+    left: 50%;
+    /* filter: blur(100px); */
+    transform: translatex(-50%);
+    z-index: -1;
+    /* background: var(--purple); */
+}
+#s-service, #service {
+    width: 90%;
+    margin-inline: auto;
+    margin-block-start: 100px;
+}
+.service-image {
+    display: none;
+}
+.service-text > p:nth-child(2),
+#portfolio > p:nth-child(2),
+.vision-text > p:first-child {
+    font-size: var(--biggerfont);
+    font-weight: var(--weight);
+    display: inline-block;
+    margin-block-start: -35px;
+    position: relative;
+}
+.service-text > p:first-child {
+    margin-inline-start: 20px;
+}
+.service-text > p:nth-child(2)::before, 
+#portfolio p:nth-child(2)::before,
+.vision-text > p:first-child::before {
+    content: "";
+    position: absolute;
+    background: var(--purple);
+    height: 65px;
+    width: 70px;
+    border-radius: 50%;
+    z-index: -1;
+    top: -15px;
+}
+.numb {
+    color: var(--purple);
+    font-weight: var(--bweight);
+    font-size: var(--bigfont);
+}
+.section1 p:nth-child(2),
+.section2 p:nth-child(2),
+.section3 p:nth-child(2) {
+    font-weight: var(--weight);
+    font-size: var(--bigfont);
+    margin-block-start: -20px;
+}
+.first,
+.second,
+.third,
+.fourth {
+    display: flex;
+    align-items: start;
+    gap: 20px;
+}
+.first > p:first-child,
+.second > p:first-child,
+.third > p:first-child,
+.fourth > p:first-child {
+    padding: 20px;
+    background: var(--purple);
+    font-weight: var(--weight);
+    font-size: var(--bigfont);
+}
+.first > div p, 
+.second > div p, 
+.third> div p, 
+.fourth > div p {
+    font-weight: var(--weight);
+    padding-block-start: 15px;
+}
+.tooltip {
+    padding: 8px 16px;
+}
+.portfolio {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    margin-block-start: 30px;
+}
+.port-card {
+    background: var(--purple);
+    padding: 15px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.dev,
+.mod {
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    box-shadow: 0 0 20px 0 var(--back);
+    border: 2px solid var(--purple);
+    position: relative;
+    overflow: hidden;
+}
+.dev::after,
+.mod::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+.port-card:hover .development,
+.port-card:hover .modeling {
+    transform: scale(1.3);
+}
+.development,
+.modeling {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+.modeling,
+.mod,
+.more {
+    display: none;
+}
+#portfolio {
+    text-align: center;
+    margin-block-start: 80px;
+}
+#portfolio p:nth-child(2) {
+    font-size: var(--biggerfont);
+}
+#portfolio > button {
+    margin-block: 30px;
+}
+#vision {
+    margin-block-start: 80px;
+}
+.vision-text > p:nth-child(even) {
+    font-size: var(--bigfont);
+    font-weight: var(--weight);
+}
