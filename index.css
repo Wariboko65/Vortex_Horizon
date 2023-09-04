@@ -11,8 +11,9 @@
     --ltwhite: rgba(255, 255, 255, 0.5);
     --smallfont: 0.75rem;
     --font: 1rem;
-    --bigfont: 1.5rem;
     --biggerfont: 2rem;
+    --bigfont: 1.5rem;
+    --smallfont: 0.75rem;
     --weight: 600;        
     --bweight: 800;        
 }
@@ -147,6 +148,7 @@ main {
     border: none;
     border-bottom: 2px solid var(--white);
     outline: none;
+    width: 180px;
     background: transparent;
     color: var(--lwhite);
     transition: border 0.5s;
@@ -154,40 +156,54 @@ main {
 .hero > input:focus-visible {
     border-bottom: 2px solid var(--purple);
 }
-button, .about-text > a {
+button {
     color: var(--lwhite);
     background: var(--purple);
+}
+.button {
+    color: var(--back);
+    background: var(--lwhite);
+    margin-block-start: 20px;
+    display: inline-block;
+    text-decoration: none;
+}
+button, .button {
     border: none;
     user-select: none;
     padding: 10px 16px;
     border-radius: 10px;
     margin-inline: 20px;
+    margin-block: 15px;
     cursor: pointer;
-    transition: box-shadow 0.5s;
+    transition: transform  0.4s, box-shadow 0.2s;
 }
-button:hover, .about-text > a:hover {
-    box-shadow: 0 5px 25px 0 var(--box) inset;
+button:hover, .button:hover {
+    box-shadow: 0 5px 25px 0 var(--lback) inset, 0 15px 35px 0 var(--lpurple);
+    transform: scale(0.9);
 }
 .hero {
     display: inline-block;
-    height: 70px;
+    height: 130px;
 }
 #emailErr {
-    font-size: 12px;
+    font-size: var(--smallfont);
     text-align: left;
     padding: 0 10px;
     color: tomato;
     opacity: 0;
     font-weight: var(--weight);
+    margin-block-start: -8px;
     transition: opacity 1s;
 }
-#home > a {
-    text-decoration: none;
-    display: block;
-    color: var(--lwhite);
+#home > p:nth-child(5) {
     text-align: right;
-    margin-block-start: 50px;
+    padding: 0 20px;
     margin-block-end: 20px;
+}
+#home  a {
+    text-decoration: none;
+    display: inline-block;
+    color: var(--lwhite);
 }
 .card-container {
     background: var(--purple);
@@ -268,11 +284,6 @@ button:hover, .about-text > a:hover {
     border-radius: 50%;
     z-index: -1;
 }
-.about-text > a {
-    margin-block-start: 20px;
-    display: inline-block;
-    text-decoration: none;
-}
 .client > p:first-child,
 .revenue > p:first-child {
     font-size: var(--biggerfont);
@@ -312,7 +323,7 @@ button:hover, .about-text > a:hover {
     font-size: var(--biggerfont);
     font-weight: var(--weight);
     display: inline-block;
-    margin-block-start: -35px;
+    margin-block-start: -15px;
     position: relative;
 }
 .service-text > p:first-child {
@@ -464,27 +475,31 @@ button:hover, .about-text > a:hover {
     scroll-snap-type: x mandatory;
     scroll-padding-inline: 90px;
 }
-.persons::after {
-    content: "";
+.person-container {
     position: relative;
+    margin-inline: start;
+    box-sizing: border-box;
 }
 .persons::-webkit-scrollbar {
     display: none;
+}
+main {
+    overflow: hidden;
 }
 .persons::before {
     content: "";
     position: absolute;
     height: 100px;
-    width: calc(100vw - 15px);
-    z-index: 1;
-    left: -5.7%;
-    top: 210px;
+    width: calc(110vw - 1px);
+    z-index: -1;
+    left: -6%;
+    top: calc(50% - 50px);
     background: var(--purple);
 }
 .one {
     margin-inline-start: 70px;
     position: relative;
-    width: min(80%, 330px);
+    width: min(65%, 330px);
     border-radius: 15px;
     transform: scale(0.9);
     scroll-snap-align: start;
