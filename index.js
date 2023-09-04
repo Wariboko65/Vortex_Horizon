@@ -77,3 +77,6 @@ function seeMoreFunction() {
     }
 }
 seeMoreBttn.addEventListener("click", seeMoreFunction);
+
+// Testimonial Slides
+
