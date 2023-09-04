@@ -217,11 +217,12 @@ button:hover, .button:hover {
 .card1,
 .card2,
 .card3 {
-    background: var(--box);
+    background: linear-gradient(to right, var(--lback), var(--lpurple));
+    border: 1.5px solid var(--lback);
     padding: 10px 30px;
     margin: 20px 10px;
     border-radius: 15px;
-    box-shadow: 0 10px 25px 0 var(--box);
+    box-shadow: 0 10px 25px 0 var(--lback);
 }
 .card1 {
     background: url("Media/Picture2_11zon.jpg");
