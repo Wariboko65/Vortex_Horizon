@@ -217,7 +217,7 @@ button:hover, .button:hover {
 .card1,
 .card2,
 .card3 {
-    background: linear-gradient(to top right, var(--lback), var(--lpurple));
+    background: linear-gradient(to top right, var(--lback), var(--lpurple), var(--lback));
     /* border: 1.5px solid var(--lback); */
     padding: 10px 30px;
     margin: 20px 10px;
