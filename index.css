@@ -212,13 +212,13 @@ button:hover, .button:hover {
     text-align: left;
     color: var(--lwhite);
     border-radius: 15px;
-    box-shadow: 0 10px 25px 0 var(--box) inset;
+    box-shadow: 0 10px 25px 0 var(--lback) inset;
 }
 .card1,
 .card2,
 .card3 {
-    background: linear-gradient(to right, var(--lback), var(--lpurple));
-    border: 1.5px solid var(--lback);
+    background: linear-gradient(to top right, var(--lback), var(--lpurple));
+    /* border: 1.5px solid var(--lback); */
     padding: 10px 30px;
     margin: 20px 10px;
     border-radius: 15px;
