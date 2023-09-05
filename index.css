@@ -178,7 +178,7 @@ button, .button {
     transition: transform  0.4s, box-shadow 0.2s;
 }
 button:hover, .button:hover {
-    box-shadow: 0 5px 25px 0 rgba(0,0,0,0.1) inset, 0 10px 25px 0 rgba(0,0,0,0.1);
+    box-shadow: 0 5px 25px 0 rgba(0,0,0,0.5) inset, 0 10px 25px 0 rgba(0,0,0,0.9);
     transform: scale(0.9);
 }
 .hero {
@@ -623,5 +623,5 @@ main {
         border-radius: 0;
         color: var(--purple);
         font-weight: var(--weight);
-        background: linear-gradient(to top right, var(--lback), var(--lwhite), gray);
+        background: linear-gradient(to top right, var(--purple), var(--lwhite), var(--ltwhite));
     }
