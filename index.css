@@ -575,6 +575,7 @@ main {
 }
 #contact-me {
     margin-block-start: 150px;
+    margin-block-end: 150px;
     position: relative;
 }
 #contact-me::before {
@@ -627,6 +628,7 @@ main {
     }
     textarea {
         resize: none;
+        height: 120px;
     }
     .contact-btn {
         border-radius: 0;
@@ -638,4 +640,43 @@ main {
     .mobile > .mute {
         margin-block-end: -22px;
         margin-block-start: -8px;
+    }
+    .secondary-contact {
+        display: flex;
+        height: 200px;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .mobile {
+        align-self: flex-end;
+    }
+    .form-message, .mail, .mobile {
+        position: relative;
+        /* background: green; */
+    }
+    .form-message::before, 
+    .mail::before,
+    .mobile::before {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        z-index: -1;
+        background: var(--box);
+    }
+    .form-message::before {
+        right: 0;
+        height: 200px;
+        width: 200px;
+
+    }
+    .mail::before {
+        height: 120px;
+        width: 120px;
+        left: 20px;
+    }
+    .mobile::before {
+        height: 60px;
+        width: 60px;
+        /* top: 80px; */
+        right: 0;
     }
