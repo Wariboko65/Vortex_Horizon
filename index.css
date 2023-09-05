@@ -582,7 +582,7 @@ main {
     position: absolute;
     inset: 0;
     background: var(--purple);
-    filter: blur(350px);
+    filter: blur(250px);
     z-index: -2;
 }
 .form-container form > p:first-child {
