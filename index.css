@@ -46,7 +46,7 @@ nav ul:first-child a {
 nav ul:first-child li {
     padding: 20px;
 }
-nav ul:first-child li img {
+nav ul:first-child li img, .logo {
    height: 30px;
 }
 .bi-list {
@@ -200,7 +200,7 @@ button:hover, .button:hover {
     padding: 0 20px;
     margin-block-end: 20px;
 }
-#home  a, .mail > .muted a {
+#home  a, .mail > .muted a, .fcontent > a {
     text-decoration: none;
     display: inline-block;
     color: var(--lwhite);
@@ -304,10 +304,10 @@ button:hover, .button:hover {
     height: 90%;
     width: 90%;
     left: 50%;
-    /* filter: blur(100px); */
+    filter: blur(100px);
     transform: translatex(-50%);
     z-index: -1;
-    /* background: var(--purple); */
+    background: var(--purple);
 }
 #s-service, #service {
     width: 90%;
@@ -593,90 +593,141 @@ main {
     position: relative;
 }
 .form-container form > p:first-child::before {
-        content: "";
-        height: 60px;
-        width: 60px;
-        border-radius: 50%;
-        background: var(--box);
-        z-index: -1;
-        left: -10px;
-        position: absolute;
-    }   
-    .fname, .lname,
-    .emaill, .number,
-    .form-message, .mail, .mobile {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin: 25px;
-    }
-    .form-container label {
-        font-weight: var(--weight);
-        cursor: pointer;
-    }
-    .form-container input, textarea {
-        background: transparent;
-        border: none;
-        outline: none;
-        padding: 10px 15px;
-        color: var(--lwhite);
-        border-bottom: 2px solid var(--ltwhite);
-        box-shadow: 0 0px 25px 0 var(--lback) inset;
-        transition: border-bottom 0.5s;
-    }
-    .form-container input:focus, textarea:focus {
-        border-bottom: 2px solid var(--purple);
-    }
-    textarea {
-        resize: none;
-        height: 120px;
-    }
-    .contact-btn {
-        border-radius: 0;
-        color: var(--purple);
-        font-weight: var(--weight);
-        background: linear-gradient(to top right, var(--ltwhite), var(--lwhite), var(--ltwhite));
-    }
-    .mail > .mute, 
-    .mobile > .mute {
-        margin-block-end: -22px;
-        margin-block-start: -8px;
-    }
-    .secondary-contact {
-        display: flex;
-        height: 200px;
-        width: 100%;
-        justify-content: space-between;
-    }
-    .mobile {
-        align-self: flex-end;
-    }
-    .form-message, .mail, .mobile {
-        position: relative;
-        /* background: green; */
-    }
-    .form-message::before, 
-    .mail::before,
-    .mobile::before {
-        content: "";
-        position: absolute;
-        border-radius: 50%;
-        z-index: -1;
-        background: var(--box);
-    }
-    .form-message::before {
-        right: 0;
-        height: 200px;
-        width: 200px;
+    content: "";
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background: var(--box);
+    z-index: -1;
+    left: -10px;
+    position: absolute;
+}   
+.fname, .lname,
+.emaill, .number,
+.form-message, .mail, .mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 25px;
+}
+.form-container label {
+    font-weight: var(--weight);
+    cursor: pointer;
+}
+.form-container input, textarea {
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    color: var(--lwhite);
+    border-bottom: 2px solid var(--ltwhite);
+    box-shadow: 0 0px 25px 0 var(--lback) inset;
+    transition: border-bottom 0.5s;
+}
+.form-container input:focus, textarea:focus {
+    border-bottom: 2px solid var(--purple);
+}
+textarea {
+    resize: none;
+    height: 120px;
+}
+.contact-btn {
+    border-radius: 0;
+    color: var(--purple);
+    font-weight: var(--weight);
+    background: linear-gradient(to top right, var(--ltwhite), var(--lwhite), var(--ltwhite));
+}
+.mail > .mute, 
+.mobile > .mute {
+    margin-block-end: -22px;
+    margin-block-start: -8px;
+}
+.secondary-contact {
+    display: flex;
+    flex-wrap: wrap;
+    height: 200px;
+    justify-content: space-between;
+}
+.mobile {
+    align-self: flex-end;
+}
+.form-message, .mail, .mobile {
+    position: relative;
+}
+.form-message::before, 
+.mail::before,
+.mobile::before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background: var(--box);
+}
+.form-message::before {
+    right: 0;
+    height: 200px;
+    width: 200px;
 
-    }
-    .mail::before {
-        height: 120px;
-        width: 120px;
-        left: 20px;
-    }
-    .mobile::before {
-        height: 60px;
-        width: 60px;
-        right: 0;
-    }
+}
+.mail::before {
+    height: 120px;
+    width: 120px;
+    left: 20px;
+}
+.mobile::before {
+    height: 60px;
+    width: 60px;
+    right: 0;
+}
+.vi {
+    background: url("Media/earth-the-world-earth-carbon-wallpaper-preview.jpg");
+    padding: 100px;
+    text-align: center;
+    background-attachment: fixed;
+}
+.vtext > p:nth-child(2) {
+    font-size: var(--biggerfont);
+    font-weight: var(--weight);
+    margin-block-end: -18px;
+}
+
+.vtext > p:nth-child(3) {
+    font-size: var(--bigfont);
+}
+.socials {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+.socials > a {
+    font-size: var(--biggerfont);
+    color: var(--lwhite);
+}
+.mainf {
+    text-align: center;
+    margin-inline: auto;
+    padding: 10px 0;
+    background: var(--box);
+}
+.fcontent p:nth-child(2), .fcontent span:first-child {
+    font-size: var(--bigfont);
+    font-weight: var(--weight);
+}
+.fcontent p:nth-child(2) {
+    border-block-end: 2px solid var(--ltwhite);
+    padding-block-end: 20px;
+    margin-block-end: -10px;
+    margin-block-start: -10px;
+}
+.fcontent {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 50px;
+}
+.rights {
+    background: var(--lwhite);
+    padding: 8px;
+    font-weight: var(--weight);
+    text-align: center;
+}
