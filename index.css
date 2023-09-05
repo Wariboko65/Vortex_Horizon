@@ -621,6 +621,7 @@ main {
         padding: 10px 0;
         color: var(--lwhite);
         border-bottom: 2px solid var(--ltwhite);
+        box-shadow: 0 0px 25px 0 var(--lback) inset;
         transition: border-bottom 0.5s;
     }
     .form-container input:focus, textarea:focus {
