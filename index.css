@@ -153,7 +153,7 @@ main {
     color: var(--lwhite);
     transition: border 0.5s;
 }
-.hero > input:focus-visible {
+.hero > input:focus {
     border-bottom: 2px solid var(--purple);
 }
 button {
@@ -178,7 +178,7 @@ button, .button {
     transition: transform  0.4s, box-shadow 0.2s;
 }
 button:hover, .button:hover {
-    box-shadow: 0 5px 25px 0 var(--lback) inset, 0 15px 35px 0 var(--lpurple);
+    box-shadow: 0 5px 25px 0 rgba(0,0,0,0.1) inset, 0 10px 25px 0 rgba(0,0,0,0.1);
     transform: scale(0.9);
 }
 .hero {
@@ -545,7 +545,7 @@ main {
     margin-block-end: -15px;
 }
 .patext p:nth-child(2) {
-    font-size: 12px;
+    font-size: var(--smallfont);
 }
 .dots {
     display: flex;
@@ -563,3 +563,65 @@ main {
 .active {
     background: var(--white);
 }
+.stars {
+    text-align: left;
+    padding: 0 80px;
+    display: flex;
+    gap: 4px;
+    color: gold
+}
+.con-img > img {
+    display: none;
+}
+#contact-me {
+    margin-block-start: 150px;
+}
+.form-container form > p:first-child {
+    font-size: var(--biggerfont);
+    font-weight: var(--weight);
+    display: inline-block;
+    position: relative;
+}
+.form-container form > p:first-child::before {
+        content: "";
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        background: var(--box);
+        z-index: -1;
+        left: -10px;
+        position: absolute;
+    }   
+    .fname, .lname,
+    .emaill, .number,
+    .form-message, .mail, .mobile {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 25px;
+    }
+    .form-container label {
+        font-weight: var(--weight);
+        cursor: pointer;
+    }
+    .form-container input, textarea {
+        background: transparent;
+        border: none;
+        outline: none;
+        padding: 10px 0;
+        color: var(--lwhite);
+        border-bottom: 2px solid var(--lwhite);
+        transition: border-bottom 0.5s;
+    }
+    .form-container input:focus, textarea:focus {
+        border-bottom: 2px solid var(--purple);
+    }
+    textarea {
+        resize: none;
+    }
+    .contact-btn {
+        border-radius: 0;
+        color: var(--purple);
+        font-weight: var(--weight);
+        background: linear-gradient(to right, var(--lback), var(--ltwhite), var(--white), var(--ltwhite), var(--lback));
+    }
