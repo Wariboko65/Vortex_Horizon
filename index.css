@@ -295,10 +295,10 @@ button:hover, .button:hover {
     gap: 50px;
     text-align: center;
 }
-#about {
+.service-text {
     position: relative;
 }
-#about::before {
+.service-text::before {
     content: "";
     position: absolute;
     height: 90%;
