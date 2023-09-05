@@ -620,7 +620,7 @@ main {
         outline: none;
         padding: 10px 0;
         color: var(--lwhite);
-        border-bottom: 2px solid var(--lwhite);
+        border-bottom: 2px solid var(--ltwhite);
         transition: border-bottom 0.5s;
     }
     .form-container input:focus, textarea:focus {
@@ -677,6 +677,5 @@ main {
     .mobile::before {
         height: 60px;
         width: 60px;
-        /* top: 80px; */
         right: 0;
     }
