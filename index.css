@@ -618,7 +618,7 @@ main {
         background: transparent;
         border: none;
         outline: none;
-        padding: 10px 0;
+        padding: 10px 15px;
         color: var(--lwhite);
         border-bottom: 2px solid var(--ltwhite);
         box-shadow: 0 0px 25px 0 var(--lback) inset;
