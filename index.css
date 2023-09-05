@@ -200,7 +200,7 @@ button:hover, .button:hover {
     padding: 0 20px;
     margin-block-end: 20px;
 }
-#home  a {
+#home  a, .mail > .muted a {
     text-decoration: none;
     display: inline-block;
     color: var(--lwhite);
@@ -575,6 +575,15 @@ main {
 }
 #contact-me {
     margin-block-start: 150px;
+    position: relative;
+}
+#contact-me::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--purple);
+    filter: blur(250px);
+    z-index: -2;
 }
 .form-container form > p:first-child {
     font-size: var(--biggerfont);
@@ -623,5 +632,10 @@ main {
         border-radius: 0;
         color: var(--purple);
         font-weight: var(--weight);
-        background: linear-gradient(to top right, var(--purple), var(--lwhite), var(--ltwhite));
+        background: linear-gradient(to top right, var(--ltwhite), var(--lwhite), var(--ltwhite));
+    }
+    .mail > .mute, 
+    .mobile > .mute {
+        margin-block-end: -22px;
+        margin-block-start: -8px;
     }
