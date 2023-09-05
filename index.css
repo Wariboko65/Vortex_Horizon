@@ -623,5 +623,5 @@ main {
         border-radius: 0;
         color: var(--purple);
         font-weight: var(--weight);
-        background: linear-gradient(to right, var(--lback), var(--ltwhite), var(--white), var(--ltwhite), var(--lback));
+        background: linear-gradient(to top right, var(--lback), var(--lwhite), gray);
     }
