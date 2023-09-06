@@ -1,14 +1,20 @@
 :root {
-    --navBack: rgb(18, 20, 20);
     --box: rgba(18, 20, 20, 0.8);
-    --back: rgb(4, 4, 14);
+    --back: rgb(30, 30, 30);
     --lback: rgba(10, 10, 24, 0.596);
-    --black: rgb(30, 30, 30);
     --purple: rgb(72, 20, 44);
     --lpurple: rgba(72, 20, 44, 0.5);
     --white: rgb(255, 255, 255);
-    --lwhite: rgba(255, 255, 255, 0.8);
-    --ltwhite: rgba(255, 255, 255, 0.5);
+    --wHeader: rgba(255, 255, 255, 0.8);
+    --dHeader: rgb(4, 4, 14);
+    --pborder: rgb(72, 20, 44);
+    --pbtn: rgb(72, 20, 44);
+    --wbtn: rgba(255, 255, 255);
+    --wborder: rgba(255, 255, 255, 0.5);
+    --wsubHeader: rgba(255, 255, 255, 0.5);
+    --dsubHeader: rgba(10, 10, 24, 0.896);
+    --lboxshadow: rgba(10, 10, 24, 0.596);
+    --boxshadow: rgba(10, 10, 24, 0.96);
     --smallfont: 0.75rem;
     --font: 1rem;
     --biggerfont: 2rem;
@@ -22,41 +28,98 @@
     color: var(--purple);
     box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+}
 body {
     margin: 0;
     padding: 0;
     background: var(--back);
-    color: var(--white);
     font-family: "segoe ui", Arial, Helvetica, sans-serif;
 }
-nav {
+nav ul {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-}
-nav ul:first-child {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 8px 16px;
 }
-nav ul:first-child a {
-    color: var(--white);
+.nav {
+    position: fixed;
+    top: 0;
+    padding: 8px 16px;
+    right: 0;
+    height: 100vh;
+    width: 50%;
+    background: var(--purple);
+    text-align: center;
+    padding-block-start: 60px;
+    z-index: 2;
+    
+    transition: transform 0.5s, opacity 0.5s;
+    opacity: 1;
+}
+.move {
+    opacity: 0;
+    transform: translatex(100%);
+    transition: transform 0.5s, opacity 0.5s;
+}
+.nav a li {
+    background: var(--box);
+    margin: 15px 0;
+    box-shadow: 0 10px 30px 0 var(--lboxshadow) inset;
+    transition: background-color 0.5s;
+}
+.nav a li:hover {
+    background: transparent;
+}
+.d {
+    position: relative;
+}
+.d::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+nav ul  a {
+    color: var(--wHeader);
     text-decoration: none;
 }
-nav ul:first-child li {
+nav ul li {
     padding: 20px;
 }
-nav ul:first-child li img, .logo {
+nav ul li img, .logo {
    height: 30px;
 }
-.bi-list {
-    font-size: 40px;
-    color: var(--lwhite);
-    margin: 0 20px;
+.navBtn {
+    display: inline-block;
+    z-index: 3;
     cursor: pointer;
+    margin: 20px;
+    /* background: var(--purple); */
+    /* padding: 10px; */
+    border-radius: 5px;
+    position: fixed;
+    top: 6px;
+    right: 15px;
 }
-nav ul:nth-child(2) {
-    display: none;
+.change > .t1 {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+.change .t2 {
+    opacity: 0;
+}
+.change > .t3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+.navBtn > div {
+    height: 5px;
+    margin: 6px 0;
+    width: 35px;
+    background: var(--wHeader);
+    transition: transform 0.5s, opacity .3s;
 }
 section {
     min-width: 90%;
@@ -94,19 +157,8 @@ main {
 #home {
     text-align: center;
     margin-block-start: 100px;
-    position: relative;
 }
-#home::before {
-    content: "";
-    position: absolute;
-    height: 90%;
-    width: 90%;
-    left: 50%;
-    /* filter: blur(200px); */
-    transform: translatex(-50%);
-    z-index: -1;
-    /* background: var(--purple); */
-}
+
 #home > p:first-child {
     text-transform: uppercase;
     display: inline-block;
@@ -132,53 +184,55 @@ main {
     font-weight: var(--weight)
 }
 .mute {
-    color: var(--ltwhite);
+    color: var(--wsubHeader);
 }
 .muted {
-    color: var(--lwhite);
+    color: var(--wHeader);
 }
 .muteD {
-    color: var(--lback);
+    color: var(--dHeader);
 }
 .mutedD {
-    color: var(--box)
+    color: var(--dsubHeader)
 }
 .hero > input {
     padding: 8px 16px;
     border: none;
-    border-bottom: 2px solid var(--white);
+    border-bottom: 2px solid var(--wborder);
     outline: none;
     width: 180px;
     background: transparent;
-    color: var(--lwhite);
+    color: var(--wHeader);
     transition: border 0.5s;
 }
 .hero > input:focus {
-    border-bottom: 2px solid var(--purple);
+    border-bottom: 2px solid var(--pborder);
 }
 button {
-    color: var(--lwhite);
-    background: var(--purple);
+    color: var(--wbtn);
+    background: var(--pbtn);
 }
 .button {
     color: var(--back);
-    background: var(--lwhite);
+    font-weight: var(--weight);
+    background: var(--wbtn);
     margin-block-start: 20px;
     display: inline-block;
     text-decoration: none;
 }
 button, .button {
     border: none;
+    box-shadow: 0 0px 25px 0 var(--lboxshadow) inset;
     user-select: none;
     padding: 10px 16px;
-    border-radius: 10px;
+    border-radius: 5px;
     margin-inline: 20px;
     margin-block: 15px;
     cursor: pointer;
     transition: transform  0.4s, box-shadow 0.2s;
 }
 button:hover, .button:hover {
-    box-shadow: 0 5px 25px 0 rgba(0,0,0,0.5) inset, 0 10px 25px 0 rgba(0,0,0,0.9);
+    box-shadow: 0 5px 25px 0 var(--lboxshadow) inset, 0 10px 25px 0 var(--boxshadow);
     transform: scale(0.9);
 }
 .hero {
@@ -203,48 +257,35 @@ button:hover, .button:hover {
 #home  a, .mail > .muted a, .fcontent > a {
     text-decoration: none;
     display: inline-block;
-    color: var(--lwhite);
+    color: var(--wHeader);
 }
 .card-container {
     background: var(--purple);
     padding: 10px;
     box-sizing: border-box;
     text-align: left;
-    color: var(--lwhite);
+    color: var(--wHeader);
     border-radius: 15px;
-    box-shadow: 0 10px 25px 0 var(--lback) inset;
+    box-shadow: 0 10px 25px 0 var(--boxshadow) inset;
 }
-.card1,
-.card2,
+.card1, 
+.card2, 
 .card3 {
-    background: linear-gradient(to top right, var(--lback), var(--lpurple), var(--lback));
-    padding: 10px 30px;
-    margin: 20px 10px;
-    border-radius: 15px;
-    box-shadow: 0 10px 25px 0 var(--lback);
-}
-.card1 {
-    background: url("Media/Picture2_11zon.jpg");
-    background-size: cover;
-    position: relative;
-    isolation: isolate;
+    background: url("Media/earth-the-world-earth-carbon-wallpaper-preview.jpg");
+    background-size: contain;
+    background-attachment: fixed;
     padding: 10px 50px;
     cursor: pointer;
-}
-.card1::after {
-    content: "";
-    border-radius: 15px;
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: -1;
+    margin: 20px 10px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px 0 var(--boxshadow);
 }
 .card1 > p:first-child,
 .card2 > p:first-child,
 .card3 > p:first-child {
     font-weight: var(--weight);
     margin-block-end: -10px;
-    color: var(--white);
+    color: var(--wHeader);
 }
 .card-container + p {
     font-size: var(--bigfont);
@@ -304,11 +345,13 @@ button:hover, .button:hover {
     height: 90%;
     width: 90%;
     left: 50%;
-    filter: blur(100px);
+    top: 0;
+    filter: blur(250px);
     transform: translatex(-50%);
-    z-index: -1;
+    z-index: -2;
     background: var(--purple);
 }
+
 #s-service, #service {
     width: 90%;
     margin-inline: auto;
@@ -369,6 +412,7 @@ button:hover, .button:hover {
     background: var(--purple);
     font-weight: var(--weight);
     font-size: var(--bigfont);
+    color: var(--wbtn);
 }
 .first > div p, 
 .second > div p, 
@@ -397,7 +441,7 @@ button:hover, .button:hover {
 .mod {
     width: 100%;
     aspect-ratio: 2 / 1;
-    box-shadow: 0 0 20px 0 var(--back);
+    box-shadow: 0 0 20px 0 var(--boxshadow);
     border: 2px solid var(--purple);
     position: relative;
     overflow: hidden;
@@ -509,10 +553,10 @@ main {
 }
 .one {
     background: var(--purple);
-    box-shadow: 0 10px 40px var(--lback) inset;
+    box-shadow: 0 10px 40px var(--lboxshadow) inset;
 }
 .two {
-    background: var(--lwhite);
+    background: gray;
 }
 .pimg {
     height: 150px;
@@ -522,7 +566,7 @@ main {
     top: 50%;
     left: -75px;
     border: 8px solid transparent;
-    box-shadow: 0 0 30px var(--back);
+    box-shadow: 0 0 30px var(--boxshadow);
     border-radius: 50%;
     transform: translateY(-50%);
 }   
@@ -557,7 +601,7 @@ main {
     width: 10px;
     border-radius: 50%;
     display: inline-block;
-    background: var(--ltwhite);
+    background: var(--wsubHeader);
     margin-block-end: 30px;
 }
 .active {
@@ -619,23 +663,24 @@ main {
     border: none;
     outline: none;
     padding: 10px 15px;
-    color: var(--lwhite);
-    border-bottom: 2px solid var(--ltwhite);
-    box-shadow: 0 0px 25px 0 var(--lback) inset;
+    color: var(--wHeader);
+    border-bottom: 2px solid var(--wborder);
+    box-shadow: 0 0px 25px 0 var(--lboxshadow) inset;
     transition: border-bottom 0.5s;
 }
 .form-container input:focus, textarea:focus {
-    border-bottom: 2px solid var(--purple);
+    border-bottom: 2px solid var(--pborder);
 }
 textarea {
     resize: none;
     height: 120px;
 }
 .contact-btn {
+    box-shadow: 0 0px 25px 0 var(--lboxshadow) inset;
     border-radius: 0;
-    color: var(--purple);
-    font-weight: var(--weight);
-    background: linear-gradient(to top right, var(--ltwhite), var(--lwhite), var(--ltwhite));
+    color: var(--pbtn);
+    font-weight: var(--bweight);
+    background: linear-gradient(to top right, var(--wsubHeader), var(--wHeader), var(--wsubHeader));
 }
 .mail > .mute, 
 .mobile > .mute {
@@ -681,7 +726,7 @@ textarea {
 }
 .vi {
     background: url("Media/earth-the-world-earth-carbon-wallpaper-preview.jpg");
-    padding: 100px;
+    padding: 20px;
     text-align: center;
     background-attachment: fixed;
 }
@@ -701,7 +746,7 @@ textarea {
 }
 .socials > a {
     font-size: var(--biggerfont);
-    color: var(--lwhite);
+    color: var(--wHeader);
 }
 .mainf {
     text-align: center;
@@ -714,7 +759,7 @@ textarea {
     font-weight: var(--weight);
 }
 .fcontent p:nth-child(2) {
-    border-block-end: 2px solid var(--ltwhite);
+    border-block-end: 2px solid var(--wsubHeader);
     padding-block-end: 20px;
     margin-block-end: -10px;
     margin-block-start: -10px;
@@ -726,8 +771,7 @@ textarea {
     margin: 50px;
 }
 .rights {
-    background: var(--lwhite);
-    padding: 8px;
+    padding: 5px;
     font-weight: var(--weight);
     text-align: center;
 }

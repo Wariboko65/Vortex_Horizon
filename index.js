@@ -1,3 +1,14 @@
+let navBtn = document.getElementsByClassName("navBtn")[0];
+let navMenu = document.getElementsByClassName("nav")[0];
+let b = document.getElementsByTagName("main")[0];
+function navBttn() {
+    navBtn.classList.toggle("change");
+    navMenu.classList.toggle("move");
+    b.classList.toggle("d");
+}
+navBtn.addEventListener("click", () => {
+    navBttn();
+});
 // Email Validation
 let emailBttn = document.getElementsByTagName("button")[0];
 function checkEmail() {
