@@ -352,7 +352,7 @@ button:hover, .button:hover {
     width: 90%;
     left: 50%;
     top: 0;
-    /* filter: blur(250px); */
+    filter: blur(250px);
     transform: translatex(-50%);
     z-index: -2;
     background: var(--purple);
@@ -636,7 +636,7 @@ main {
     position: absolute;
     inset: 0;
     background: var(--purple);
-    /* filter: blur(250px); */
+    filter: blur(250px);
     z-index: -2;
 }
 .form-container form > p:first-child {
