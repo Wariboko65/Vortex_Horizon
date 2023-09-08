@@ -90,7 +90,7 @@ function seeMoreFunction() {
 seeMoreBttn.addEventListener("click", seeMoreFunction);
 
 // Connect to Google Sheet
-const scriptURL = 'https://script.google.com/macros/s/AKfycbx9fMiZB8XSKZtHKJ1f9UMklkLlcH9NhfDXQrqmRpo9u7YKGnPSNnTrTvCPmEZD73ql/exec';
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzDBhLcGzbTS3w-L3D6jeN8q3bv_iOl37IAyrGQ93eph77xaLnOjPI2i-CBelHogHdY/exec';
 const form = document.forms['submit-to-google-sheet'];
 const msg = document.getElementById("msg");
 
