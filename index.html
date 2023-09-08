@@ -8,23 +8,27 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <main>
+    <main id="homee">
         <div class="backImg">
             <img src="Media/ji_11zon.png" alt="bacKground-image">
         </div>
         <nav>
             <ul>
-                <div class="logo">
+                <div class="logoo">
                     <a href="#"><li><img src="Media/Slide18.png" alt="logo"></li></a>
                 </div>
                 <div class="nav move">
-                    <a href="#home"><li>Home</li></a>
-                    <a href="#about"><li>About Us</li></a>
-                    <a href="#s-service"><li>Services</li></a>
-                    <a href="#portfolio"><li>Portfolio</li></a>
-                    <a href="#contact-me"><li>Contact Us</li></a>
-                    <a href="https://wa.me/+2348113269030"><li>Get Started</li></a>
-                    <a href="#"><li>Packages</li></a>
+                    <div class="nleft">
+                        <a href="#homee"><li>Home</li></a>
+                        <a href="#about"><li>About Us</li></a>
+                        <a href="#s-service"><li>Services</li></a>
+                        <a href="#portfolio"><li>Portfolio</li></a>
+                        <a href="#contact-me"><li>Contact Us</li></a>
+                    </div>
+                    <div class="nright">
+                        <a href="https://wa.me/+2348113269030"><li>Get Started</li></a>
+                        <a href="#"><li>Packages</li></a>
+                    </div>
                 </div>
                 <div class="navBtn">
                     <div class="t1"></div>
@@ -96,17 +100,30 @@
         </section>
         <section id="s-service">
             <div class="service-image">
-                <img src="Media/Picture3_11zon.jpg" alt="designImg">
-                <img src="Media/7_11zon.jpg" alt="designImg">
-                <img src="Media/5_11zon.jpg" alt="designImg">
-                <img src="Media/Picture2_11zon.jpg" alt="designImg">
+                <div><img src="Media/Picture3_11zon.jpg" alt="designImg"></div>
+                <div><img src="Media/7_11zon.jpg" alt="designImg"></div>
+                <div><img src="Media/5_11zon.jpg" alt="designImg"></div>
+                <div><img src="Media/Picture2_11zon.jpg" alt="designImg"></div>  
             </div>
             <div class="service-text">
                 <p class="mute">what do you need?</p>
                 <p class="muted">Special Services</p>
                 <div class="service-section">
+                    <div class="sep">  
+                        <div class="section2">
+                            <p class="numb">01</p>
+                            <p class="muted">SEO & Digital Marketing</p>
+                            <p class="mute">Optimizing websites for better search engine rankings and visibility.</p>
+                            <p class="mute">Planning and executing digital marketing strategies, including social Media marketing, email campaigns, and online advertising.</p>
+                        </div>
+                        <div class="section3">
+                            <p class="numb">02</p>
+                            <p class="muted">CMS Integration</p>
+                            <p class="mute">WordPress: Content management system integration(CMS), Implementing and customizing CMS platforms for clients who want to manage their website content easily.</p>
+                        </div>
+                    </div>
                     <div class="section1">
-                        <p class="numb">01</p>
+                        <p class="numb">03</p>
                         <p class="muted">Graphics Design</p>
                         <p class="mute">
                             Designing materials for print, such as brochures, 
@@ -120,17 +137,6 @@
                             Crafting custom illustrations for websites, 
                             apps, marketing materials and more.
                         </p>
-                    </div>
-                    <div class="section2">
-                        <p class="numb">02</p>
-                        <p class="muted">SEO & Digital Marketing</p>
-                        <p class="mute">Optimizing websites for better search engine rankings and visibility.</p>
-                        <p class="mute">Planning and executing digital marketing strategies, including social Media marketing, email campaigns, and online advertising.</p>
-                    </div>
-                    <div class="section3">
-                        <p class="numb">03</p>
-                        <p class="muted">CMS Integration</p>
-                        <p class="mute">WordPress: Content management system integration(CMS), Implementing and customizing CMS platforms for clients who want to manage their website content easily.</p>
                     </div>
                 </div>
             </div>
@@ -375,7 +381,8 @@
         </section>
         <section id="vision">
             <div class="vision-image">
-
+                <div><img src="Media/v.png" alt="vision"></div>
+                <div><img src="Media/mi8_11zon.jpg" alt="mission"></div>
             </div>
             <div class="vision-text mute">
                 <p class="muted">Vision & Mission</p>
@@ -503,10 +510,10 @@
             </div>
             <div class="dots">
                 <div class="dot active"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
+                <div class="dot active"></div>
+                <div class="dot active"></div>
+                <div class="dot active"></div>
+                <div class="dot active"></div>
             </div>
             <p class="mute">
                 Your feedback fuels our passion and guides our growth. 
@@ -533,7 +540,7 @@
                     <div class="form-contact">
                         <div class="emaill">
                             <label for="emaill" class="muted">Email</label>
-                            <input type="text" name="email" placeholder="Enter your email" id="emaill" required>
+                            <input type="email" name="email" placeholder="Enter your email" id="emaill" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
                         </div>
                         <div class="number">
                             <label for="number" class="muted">Phone Number</label>
@@ -542,7 +549,7 @@
                     </div>
                     <div class="form-message">
                         <label for="message" class="muted">Message</label>
-                        <textarea id="message" name="userMessage" placeholder="Enter your message" required></textarea>
+                        <textarea id="message" name="userMessage" placeholder="Enter your message"></textarea>
                     </div>
                     <button type="submit" class="contact-btn">Submit</button>
                     <span id="msg"></span>
@@ -553,7 +560,7 @@
                         </div>
                         <div class="mobile">
                             <p class="mute">WhatsApp</p>
-                            <p class="muted">+2348113269030</p>
+                            <p class="muted"><a href="https://wa.me/+2348113269030">+234 811 326 9030</a></p>
                         </div>
                     </div>
                 </form>
@@ -583,12 +590,12 @@
                 </div>
                 <div class="fcontent">
                     <span class="muted">NAVIGATION</span>
-                    <a href="#home">Home</a>
+                    <a href="#homee">Home</a>
                     <a href="#about">About Us</a>
                     <a href="#s-service">Services</a>
                     <a href="#portfolio">Portfolio</a>
                     <a href="#contact-me">Contact Us</a>
-                    <a href="https://wa.me/+2348113269030"><li>Get Started</li></a>
+                    <a href="https://wa.me/+2348113269030">Get Started</a>
                     <a href="#">Packages</a>
                 </div>
                 <div class="fcontent">
@@ -601,7 +608,7 @@
                 <div class="fcontent">
                     <span class="muted">CONTACT</span>
                     <span class="mute">For more information contact us on</span>
-                    <span class="mute">+2348113269030</span>
+                    <span class="muted"><a href="https://wa.me/+2348113269030">+234 811 326 9030</a></span>
                     <a href="mailto:vortexxhorizon@gmail.com">Vortexxhorizon@gmail.com</a>
                 </div>
             </div>

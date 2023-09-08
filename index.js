@@ -96,7 +96,7 @@ const msg = document.getElementById("msg");
 
 form.addEventListener('submit', e => {
 e.preventDefault();
-fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+fetch(scriptURL, {method: 'POST', body: new FormData(form)})
     .then(response => {
         msg.innerHTML = "Message sent successfully"
         setTimeout(function(){
@@ -104,6 +104,49 @@ fetch(scriptURL, { method: 'POST', body: new FormData(form)})
         },5000)
         form.reset()
     })
-    .catch(error => console.error('Error!', error.message))
+    .catch(error => console.error('Error!', error.message));
 });
-// Connected to Google Sheet Successfully
+
+const one = document.getElementsByClassName("one");
+const dot = document.getElementsByClassName("dot");
+
+const marginn = {
+    threshold: 0,
+    rootMargin: "10px"
+};
+
+const observer1 = new IntersectionObserver(entries => {
+    if (!entries.isIntersecting) {
+        dot[0].classList.toggle("active");
+    }
+}, marginn);
+
+const observer2 = new IntersectionObserver(entries => {
+    if (!entries.isIntersecting) {
+        dot[1].classList.toggle("active");
+    }
+}, marginn);
+
+const observer3 = new IntersectionObserver(entries => {
+    if (!entries.isIntersecting) {
+        dot[2].classList.toggle("active");
+    }
+}, marginn);
+
+const observer4 = new IntersectionObserver(entries => {
+    if (!entries.isIntersecting) {
+        dot[3].classList.toggle("active");
+    }
+}, marginn);
+
+const observer5 = new IntersectionObserver(entries => {
+    if (!entries.isIntersecting) {
+        dot[4].classList.toggle("active");
+    }
+}, marginn);
+
+observer1.observe(one[0]);
+observer2.observe(one[1]);
+observer3.observe(one[2]);
+observer4.observe(one[3]);
+observer5.observe(one[4]);
