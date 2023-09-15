@@ -165,8 +165,9 @@ conBtn.addEventListener("click", () => {
 });
 
 // Theme changer
+let themeBtn = document.getElementsByClassName("theme")[0];
+
 function themeChange() {
-    let themeBtn = document.getElementsByClassName("theme")[0];
     let back = document.getElementsByClassName("backImg")[0];
     let newBack = back.getElementsByTagName("img")[0];
     let logo = document.getElementsByClassName("logoo")[0];
