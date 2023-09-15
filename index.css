@@ -1,20 +1,62 @@
-:root {
+/* :root {
     --box: rgba(18, 20, 20, 0.8);
+    --dbox: rgb(128, 128, 128);
     --back: rgb(7, 7, 19);
     --lback: rgba(10, 10, 24, 0.596);
     --purple: rgb(72, 20, 44);
     --lpurple: rgba(72, 20, 44, 0.5);
     --white: rgb(255, 255, 255);
+    --black: rgb(7, 7, 19);
     --wHeader: rgba(255, 255, 255, 0.8);
     --dHeader: rgb(4, 4, 14);
     --pborder: rgb(72, 20, 44);
+    --dborder: rgb(7, 7, 19);
+    --wborder: rgba(255, 255, 255, 0.5);
     --pbtn: rgb(72, 20, 44);
     --wbtn: rgba(255, 255, 255);
-    --wborder: rgba(255, 255, 255, 0.5);
     --wsubHeader: rgba(255, 255, 255, 0.5);
     --dsubHeader: rgba(10, 10, 24, 0.896);
     --lboxshadow: rgba(10, 10, 24, 0.596);
     --boxshadow: rgba(0, 0, 0, 0.56);
+    --smallfont: 0.75rem;
+    --font: 1rem;
+    --biggerfont: 2rem;
+    --bigfont: 1.5rem;
+    --smallfont: 0.75rem;
+    --weight: 600;        
+    --bweight: 800;        
+} */
+.light {
+    --back: rgb(255, 255, 255);
+    --dbox: rgb(128, 128, 128);
+    --black: rgb(7, 7, 19);
+    --dHeader: rgb(4, 4, 14);
+    --dsubHeader: rgba(10, 10, 24, 0.896);
+    --dborder: rgb(7, 7, 19);
+    --dlboxshadow: rgba(0, 0, 0, 0.2);
+    --dboxshadow: rgba(0, 0, 0, 0.4);
+    --purple: rgb(136, 29, 79);
+    --pbtn: rgb(136, 29, 79);
+    --pborder: rgb(136, 29, 79);
+    
+}
+.dark {
+    --back: rgb(7, 7, 19);
+    --box: rgba(18, 20, 20, 0.8);
+    --white: rgb(255, 255, 255);
+    --wHeader: rgba(255, 255, 255);
+    --wsubHeader: rgba(255, 255, 255, 0.8);
+    --wborder: rgba(255, 255, 255, 0.5);    
+    --lboxshadow: rgba(0, 0, 0, 0.5);
+    --boxshadow: rgba(0, 0, 0, 0.8);
+    --purple: rgb(72, 20, 44);
+    --pbtn: rgb(72, 20, 44);
+    --pborder: rgb(72, 20, 44);
+}
+.light, .dark {
+    --wbtn: rgba(255, 255, 255);
+    --lback: rgba(10, 10, 24, 0.596);
+    --lpurple: rgba(72, 20, 44, 0.5);
     --smallfont: 0.75rem;
     --font: 1rem;
     --biggerfont: 2rem;
@@ -66,10 +108,10 @@ nav ul {
     transition: transform 0.5s, opacity 0.5s;
 }
 .nav a li {
-    background: var(--box);
+    background: var(--box, var(--dbox));
     padding: 20px;
     margin: 15px 0;
-    box-shadow: 0 10px 30px 0 var(--lboxshadow) inset;
+    box-shadow: 0 10px 30px 0 var(--lboxshadow, var(--dlboxshadow)) inset;
     transition: background-color 0.5s;
 }
 .nav a li:hover {
@@ -82,29 +124,27 @@ nav ul {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: var(--lboxshadow, var(--dlboxshadow));
     z-index: 1;
 }
 nav ul  a {
-    color: var(--wHeader);
+    color: var(--wHeader, var(--dHeader));
     text-decoration: none;
 }
 nav ul li {
     padding: 8px 16px;
 }
 nav ul li img, .logo {
-   height: 30px;
+   height: 50px;
 }
 .navBtn {
     display: inline-block;
     z-index: 3;
     cursor: pointer;
     margin: 20px;
-    /* background: var(--purple); */
-    /* padding: 10px; */
     border-radius: 5px;
     position: fixed;
-    top: 6px;
+    top: 18px;
     right: 15px;
 }
 .change > .t1 {
@@ -120,7 +160,7 @@ nav ul li img, .logo {
     height: 5px;
     margin: 6px 0;
     width: 35px;
-    background: var(--wHeader);
+    background: var(--wHeader, var(--dHeader));
     transition: transform 0.5s, opacity .3s;
 }
 section {
@@ -186,46 +226,47 @@ main {
     font-weight: var(--weight)
 }
 .mute {
-    color: var(--wsubHeader);
+    color: var(--wsubHeader, var(--dsubHeader));
 }
 .muted {
-    color: var(--wHeader);
+    color: var(--wHeader, var(--dHeader));
 }
-.muteD {
-    color: var(--dHeader);
+.one .mute {
+    color: rgba(255, 255, 255, 0.8);
 }
-.mutedD {
-    color: var(--dsubHeader)
+.one .muted {
+    color: rgba(255, 255, 255);
 }
 .hero > input {
     padding: 8px 16px;
     border: none;
-    border-bottom: 2px solid var(--wborder);
+    border-bottom: 2px solid var(--wborder, var(--dborder));
     outline: none;
     width: 180px;
     background: transparent;
-    color: var(--wHeader);
+    color: var(--wHeader, var(--dHeader));
     transition: border 0.5s;
+}
+input::placeholder, textarea::placeholder {
+    color: var(--wborder, var(--dborder));
 }
 .hero > input:focus {
     border-bottom: 2px solid var(--pborder);
 }
 button {
-    color: var(--wbtn);
-    background: var(--pbtn);
     margin-inline: 20px;
 }
 .button {
-    color: var(--wHeader);
     font-weight: var(--weight);
-    background: var(--pbtn);
     margin-block-start: 20px;
     display: inline-block;
     text-decoration: none;
 }
 button, .button {
+    color: var(--wbtn);
+    background: var(--pbtn);
     border: none;
-    box-shadow: 0 0px 25px 0 var(--lboxshadow) inset;
+    box-shadow: 0 0px 25px 0 var(--lboxshadow, var(--dlboxshadow)) inset;
     user-select: none;
     padding: 10px 16px;
     border-radius: 5px;
@@ -234,7 +275,7 @@ button, .button {
     transition: transform  0.4s, box-shadow 0.2s;
 }
 button:hover, .button:hover {
-    box-shadow: 0 5px 25px 0 var(--lboxshadow) inset, 0 10px 25px 0 var(--boxshadow);
+    box-shadow: 0 5px 25px 0 var(--lboxshadow, var(--dlboxshadow)) inset, 0 10px 25px 0 var(--boxshadow, var(--dboxshadow));
     transform: scale(0.9);
 }
 .hero {
@@ -263,35 +304,33 @@ button:hover, .button:hover {
 .mobile p a {
     text-decoration: none;
     display: inline-block;
-    color: var(--wHeader);
+    color: var(--wHeader, var(--dHeader));
 }
 .card-container {
     background: var(--purple);
     padding: 10px;
     box-sizing: border-box;
     text-align: left;
-    color: var(--wHeader);
+    color: var(--wHeader, var(--dHeader));
     border-radius: 15px;
-    box-shadow: 0 10px 25px 0 var(--boxshadow) inset;
+    box-shadow: 0 10px 25px 0 var(--boxshadow, var(--dboxshadow)) inset;
 }
 .card1, 
 .card2, 
 .card3 {
-    background: url("Media/earth-the-world-earth-carbon-wallpaper-preview.jpg");
-    background-size: contain;
-    background-attachment: fixed;
     padding: 10px 50px;
     cursor: pointer;
-    margin: 20px 10px;
-    border-radius: 10px;
-    box-shadow: 0 10px 25px 0 var(--boxshadow);
+    margin: 10px;
+    border: 1px solid var(--dsubHeader, var(--wsubHeader));
+    border-radius: 5px;
+    box-shadow: 0 10px 25px 0 var(--boxshadow, var(--dboxshadow));
 }
 .card1 > p:first-child,
 .card2 > p:first-child,
 .card3 > p:first-child {
     font-weight: var(--weight);
     margin-block-end: -10px;
-    color: var(--wHeader);
+    color: var(--wHeader, var(--dHeader));
 }
 .card-container + p {
     font-size: var(--bigfont);
@@ -306,6 +345,7 @@ button:hover, .button:hover {
 }
 .brand-logo > img {
     height: 60px;
+    filter: drop-shadow(0 0 1px var(--wHeader, var(--dHeader)));
 }
 #about {
     margin-block-start: 100px;
@@ -443,14 +483,13 @@ button:hover, .button:hover {
     background: var(--purple);
     padding: 15px;
     cursor: pointer;
-    box-shadow: 0 0 20px 0 var(--purple);
     overflow: hidden;
 }
 .dev,
 .mod {
     width: 100%;
     aspect-ratio: 2 / 1;
-    box-shadow: 0 0 20px 0 var(--boxshadow);
+    box-shadow: 0 0 20px 0 var(--boxshadow, var(--dboxshadow));
     border: 2px solid var(--purple);
     position: relative;
     overflow: hidden;
@@ -550,6 +589,7 @@ main {
     background: var(--purple);
 }
 .one {
+    color: var(--wbtn);
     margin-inline-start: 70px;
     position: relative;
     width: min(65%, 330px);
@@ -562,7 +602,7 @@ main {
 }
 .one {
     background: var(--purple);
-    box-shadow: 0 10px 40px var(--lboxshadow) inset;
+    box-shadow: 0 10px 40px var(--lboxshadow, var(--dlboxshadow)) inset;
 }
 .two {
     background: gray;
@@ -575,7 +615,7 @@ main {
     top: 50%;
     left: -75px;
     border: 8px solid transparent;
-    box-shadow: 0 0 30px var(--boxshadow);
+    box-shadow: 0 0 30px var(--boxshadow, var(--dboxshadow));
     border-radius: 50%;
     transform: translateY(-50%);
 }   
@@ -610,11 +650,11 @@ main {
     width: 10px;
     border-radius: 50%;
     display: inline-block;
-    background: var(--wsubHeader);
+    background: var(--wborder, var(--lback));
     margin-block-end: 30px;
 }
 .active {
-    background: var(--white);
+    background: var(--white, var(--black));
 }
 .stars {
     text-align: left;
@@ -650,7 +690,7 @@ main {
     height: 60px;
     width: 60px;
     border-radius: 50%;
-    background: var(--box);
+    background: var(--box, var(--dbox));
     z-index: -1;
     left: -10px;
     position: absolute;
@@ -672,9 +712,9 @@ main {
     border: none;
     outline: none;
     padding: 10px 15px;
-    color: var(--wHeader);
-    border-bottom: 2px solid var(--wborder);
-    box-shadow: 0 0px 25px 0 var(--lboxshadow) inset;
+    color: var(--wHeader, var(--dHeader));
+    border-bottom: 2px solid var(--wborder, var(--dborder));
+    box-shadow: 0 0px 25px 0 var(--lboxshadow, var(--dlboxshadow)) inset;
     transition: border-bottom 0.5s;
 }
 .form-container input:focus, textarea:focus {
@@ -685,11 +725,11 @@ textarea {
     height: 120px;
 }
 .contact-btn {
-    box-shadow: 0 0px 25px 0 var(--lboxshadow) inset;
+    box-shadow: 0 0px 25px 0 var(--lboxshadow, var(--dlboxshadow)) inset;
     border-radius: 0;
     color: var(--pbtn);
     font-weight: var(--bweight);
-    background: linear-gradient(to top right, var(--wsubHeader), var(--wHeader), var(--wsubHeader));
+    background: var(--wbtn);
 }
 .mail > .mute, 
 .mobile > .mute {
@@ -715,7 +755,7 @@ textarea {
     position: absolute;
     border-radius: 50%;
     z-index: -1;
-    background: var(--box);
+    background: var(--box, var(--dbox));
 }
 .form-message::before {
     right: 0;
@@ -734,8 +774,9 @@ textarea {
     right: 0;
 }
 .vi {
-    background: url("Media/earth-the-world-earth-carbon-wallpaper-preview.jpg");
+    background: url("Media/b57b056dea139de08653eec3b8e16aee.jpg");
     padding: 20px;
+    background-attachment: fixed;
     text-align: center;
     background-attachment: fixed;
 }
@@ -755,20 +796,20 @@ textarea {
 }
 .socials > a {
     font-size: var(--biggerfont);
-    color: var(--wHeader);
+    color: var(--wHeader, var(--dHeader));
 }
 .mainf {
     text-align: center;
     margin-inline: auto;
     padding: 10px 0;
-    background: var(--box);
+    background: var(--box, var(--dbox));
 }
 .fcontent p:nth-child(2), .fcontent span:first-child {
     font-size: var(--bigfont);
     font-weight: var(--weight);
 }
 .fcontent p:nth-child(2) {
-    border-block-end: 2px solid var(--wsubHeader);
+    border-block-end: 2px solid var(--wsubHeader, var(--dsubHeader));
     padding-block-end: 20px;
     margin-block-end: -10px;
     margin-block-start: -10px;
@@ -790,7 +831,77 @@ textarea {
 .vision-image {
     display: none;
 }
-
+.onlinec {
+    position: absolute;
+    top: 0;
+    background: red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    height: 50px; 
+    width: 50px;
+    cursor: pointer;
+    color: var(--back);
+    box-shadow: 0 0 25px 0 var(--boxshadow, var(--dboxshadow));
+    background: var(--wHeader, var(--dHeader));
+}
+.onlinec > a {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    text-decoration: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-inline: auto;
+    color: var(--wbtn);
+    background: var(--purple);
+    transition: opacity .5s, top .3s;
+    box-shadow: 0 0 25px 0 var(--boxshadow, var(--dboxshadow));
+}
+.onlinec.act > a {
+    opacity: 1;
+}
+.onlinec.act > a:first-child {
+    top: -60px;
+}
+.onlinec.act > a:nth-child(2) {
+    top: -120px;
+}
+.onlinec.act > a:nth-child(3) {
+    top: -180px;
+}
+.onlinec.act > a:nth-child(4) {
+    top: -240px;
+}
+.online, .onlinec a, .theme {
+    font-size: 25px;
+    width: 50px;
+    height: 50px;
+}
+.online {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+}
+.theme {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--wHeader, var(--dHeader));
+    cursor: pointer;
+    border-radius: 50%;
+    background: var(--purple);
+    box-shadow: 0 0 25px 0 var(--boxshadow, var(--dboxshadow));
+}
 @media (width >= 1000px) {
     .nav {
         position: relative;
@@ -835,7 +946,7 @@ textarea {
     .nright a:first-child li {
         background: var(--purple);
         /* border-radius: 10px; */
-        box-shadow: 0 15px 20px 0 var(--boxshadow);
+        box-shadow: 0 15px 20px 0 var(--boxshadow, var(--dboxshadow));
     }
     .nright a:first-child li:hover {
         background-color: transparent;
@@ -846,7 +957,7 @@ textarea {
     .about-image {
         height: 90%;
         width: 50%;
-        box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.5);
+        box-shadow: 0 0 30px 0 var(--lboxshadow, var(--dlboxshadow));
     }
     .about-text , .about-image, .service-image, .service-text {
         width: 50%;
@@ -878,7 +989,7 @@ textarea {
         height: 50%;
         background: var(--purple);
         top: -20px;
-        box-shadow: 0 -10px 30px 0 rgba(0, 0, 0, 0.5);
+        box-shadow: 0 -10px 30px 0 var(--lboxshadow, var(--dlboxshadow));
         left: -20px;
         z-index: -1;
     }
@@ -886,7 +997,7 @@ textarea {
         content: "";
         position: absolute;
         width: 60%;
-        box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.5);
+        box-shadow: 0 10px 30px 0 var(--lboxshadow, var(--dlboxshadow));
         height: 50%;
         background: var(--purple);
         bottom: -20px;
@@ -915,7 +1026,7 @@ textarea {
         width: 200px;
         position: relative;
         background: var(--purple);
-        box-shadow: 0 10px 30px 0 rgba(0, 0, 0);
+        box-shadow: 0 10px 30px 0 var(--boxshadow, var(--dboxshadow));
     }
     .service-image img:hover, 
     .vision-image div img:hover {
@@ -925,7 +1036,7 @@ textarea {
         position: absolute;
         border: 2px solid var(--purple);
         overflow: hidden;
-        box-shadow: 0 5px 20px 0 rgba(0, 0, 0);
+        box-shadow: 0 5px 20px 0 var(--boxshadow, var(--dboxshadow));
     }
     .service-image > div:first-child {
         left: -50%;
@@ -979,7 +1090,7 @@ textarea {
         position: absolute;
         overflow: hidden;
         border-radius: 50%;
-        box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.8);
+        box-shadow: 0 0 50px 0 var(--boxshadow, var(--dboxshadow));
         outline-offset: -5px;
     }
     .vision-image div:first-child {
