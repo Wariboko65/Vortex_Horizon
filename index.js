@@ -190,6 +190,20 @@ function themeChange() {
         newBack.src = "Media/2084267.jpg";
         fImage.style.backgroundImage = "url('Media/b57b056dea139de08653eec3b8e16aee.jpg.jpg')";
     }
+
+    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.body.classList.remove("light");
+        document.body.classList.add("dark");
+    }
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+        if (e.matches) {
+            document.body.classList.remove("light");
+            document.body.classList.add("dark");
+        } else {
+            document.body.classList.remove("dark");
+            document.body.classList.add("light");
+        }
+    });
 }
 
 themeBtn.addEventListener("click", () => {
