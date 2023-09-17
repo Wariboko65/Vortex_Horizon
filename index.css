@@ -307,9 +307,7 @@ button:hover, .button:hover {
     color: var(--wHeader, var(--dHeader));
 }
 .card-container {
-    background: var(--purple);
     padding: 10px;
-    box-sizing: border-box;
     text-align: left;
     color: var(--wHeader, var(--dHeader));
     border-radius: 15px;
@@ -321,7 +319,7 @@ button:hover, .button:hover {
     padding: 10px 50px;
     cursor: pointer;
     margin: 10px;
-    border: 1px solid var(--dsubHeader, var(--wsubHeader));
+    backdrop-filter: blur(10px);
     border-radius: 5px;
     box-shadow: 0 10px 25px 0 var(--boxshadow, var(--dboxshadow));
 }
@@ -886,13 +884,13 @@ textarea {
 }
 .online {
     position: fixed;
-    bottom: 15px;
-    right: 15px;
+    bottom: 20px;
+    right: 20px;
 }
 .theme {
     position: fixed;
-    bottom: 15px;
-    left: 15px;
+    bottom: 20px;
+    left: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -922,31 +920,21 @@ textarea {
     }
     .nav a li {
         background-color: transparent;
+        Color: var(--wsubHeader, var(--dsubHeader));
         padding: 8px 16px;
         box-shadow: 0 0 0 0;
         margin: 0;
     }
     .nav a li:hover {
-        color: var(--wbtn);
+        color: var(--wHeader, var(--dHeader));
     }
     .nright a:nth-child(2) li,
     .nright a:first-child li {
-        border: 2px double var(--purple);
-        outline: 2px double var(--purple);
-        border-radius: 10px;
-        outline-offset: -6px;
-        transition: background-color 0.5s;
+        border-radius: 20px;
+        box-shadow: 0 5px 20px 0 var(--boxshadow, var(--dboxshadow));
     }
     .nright {
         gap: 30px;
-    }
-    .nright a:nth-child(2) li:hover {
-        background: var(--purple);
-    }
-    .nright a:first-child li {
-        background: var(--purple);
-        /* border-radius: 10px; */
-        box-shadow: 0 15px 20px 0 var(--boxshadow, var(--dboxshadow));
     }
     .nright a:first-child li:hover {
         background-color: transparent;

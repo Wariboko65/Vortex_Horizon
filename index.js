@@ -169,6 +169,7 @@ let themeBtn = document.getElementsByClassName("theme")[0];
 
 function themeChange() {
     let back = document.getElementsByClassName("backImg")[0];
+    let fLogo = document.getElementsByClassName("logo")[0];
     let newBack = back.getElementsByTagName("img")[0];
     let logo = document.getElementsByClassName("logoo")[0];
     let newLogo = logo.getElementsByTagName("img")[0];
@@ -178,12 +179,14 @@ function themeChange() {
         document.body.classList.remove("light");
         document.body.classList.add("dark");
         newLogo.src = "Media/Picture3.png";
+        fLogo.src = "Media/Picture3.png";
         newBack.src = "Media/ji_11zon.png";
         fImage.style.backgroundImage = "url('Media/earth-the-world-earth-carbon-wallpaper-preview.jpg')";
     } else {
         document.body.classList.remove("dark");
         document.body.classList.add("light");
         newLogo.src = "Media/Picture2.png";
+        fLogo.src = "Media/Picture2.png";
         newBack.src = "Media/2084267.jpg";
         fImage.style.backgroundImage = "url('Media/b57b056dea139de08653eec3b8e16aee.jpg.jpg')";
     }
