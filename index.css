@@ -722,7 +722,7 @@ textarea {
     right: 0;
 }
 .vi {
-    background: url("Media/Mockup/rendering_015-watermark.jpg");
+    background: url("Media/rendering_015-watermark.jpg");
     padding: 20px;
     text-align: center;
 }
@@ -1075,10 +1075,10 @@ textarea {
     }
     #contact-me {
         display: flex;
-        justify-content: start;
-        column-gap: 80px;
+        justify-content: center;
+        margin-inline-start: -20px;
         align-items: start;
-        width: 95%;
+        width: 98%;
     }
     .con-img div > img {
         display: block;
@@ -1100,6 +1100,7 @@ textarea {
     }
     .con-img {
         position: relative;
+        transform: scale(0.8.5);
     }
     .form-name, .form-contact {
         display: flex;
