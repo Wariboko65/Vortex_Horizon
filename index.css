@@ -41,7 +41,7 @@
     
 }
 .dark {
-    --back: rgb(7, 7, 19);
+    --back: rgb(0, 0, 0);
     --box: rgba(18, 20, 20, 0.8);
     --white: rgb(255, 255, 255);
     --wHeader: rgba(255, 255, 255);
@@ -390,7 +390,7 @@ button:hover, .button:hover {
     width: 90%;
     left: 50%;
     top: 0;
-    filter: blur(250px);
+    filter: blur(200px);
     transform: translatex(-50%);
     z-index: -2;
     background: var(--purple);
@@ -661,20 +661,22 @@ main {
     gap: 4px;
     color: gold
 }
-.con-img > img {
+.con-img div > img {
     display: none;
 }
 #contact-me {
     margin-block-start: 150px;
     margin-block-end: 150px;
+}
+.form-container {
     position: relative;
 }
-#contact-me::before {
+.form-container::before {
     content: "";
     position: absolute;
     inset: 0;
     background: var(--purple);
-    filter: blur(250px);
+    filter: blur(200px);
     z-index: -2;
 }
 .form-container form > p:first-child {
@@ -924,6 +926,21 @@ textarea {
         padding: 8px 16px;
         box-shadow: 0 0 0 0;
         margin: 0;
+        position: relative;
+    }
+    .nleft a li::after {
+        content: "";
+        position: absolute;
+        height: 2px;
+        width: 0;
+        left: 50%;
+        bottom: 0;
+        background: var(--purple);
+        transition: 0.5s;
+    }
+    .nleft a li:hover::after {
+        width: 100%;
+        left: 0;
     }
     .nav a li:hover {
         color: var(--wHeader, var(--dHeader));
@@ -931,7 +948,11 @@ textarea {
     .nright a:nth-child(2) li,
     .nright a:first-child li {
         border-radius: 20px;
-        box-shadow: 0 5px 20px 0 var(--boxshadow, var(--dboxshadow));
+        box-shadow: 0 5px 20px 0 var(--boxshadow, var(--dboxshadow)) inset, 0 5px 25px var(--boxshadow, var(--dboxshadow));
+    }
+    .nright a:nth-child(2) li:hover,
+    .nright a:first-child li:hover {
+        outline: 1px solid var(--purple);
     }
     .nright {
         gap: 30px;
@@ -1063,6 +1084,11 @@ textarea {
     }
     .port-content {
         width: 30%;
+        transition: box-shadow .5s;
+        box-shadow: 0 5px 25px 0 var(--boxshadow, var(--dboxshadow)) inset, 0 5px 25px 0 var(--boxshadow, var(--dboxshadow));
+    }
+    .port-content:hover {
+        box-shadow: 0 5px 25px 0 var(--boxshadow, var(--dboxshadow)) inset, 0 5px 25px 0 var(--purple);
     }
     .d::after {
         display: none;
@@ -1097,5 +1123,45 @@ textarea {
     }
     .fcontent p:nth-child(3) {
         text-align: left;
+    }
+    #contact-me {
+        display: flex;
+        justify-content: center;
+        column-gap: 100px;
+        align-items: start;
+        width: 100%;
+    }
+    .con-img div > img {
+        display: block;
+        width: 100%;
+        object-fit: contain;
+    }
+    .con-img div {
+        z-index: 2;
+        width: 598px;
+        height: 598px;
+        border-radius: 50%;
+        box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.8);
+        overflow: hidden;
+    }
+    .con-img {
+        position: relative;
+        margin-inline-start: -80px;
+
+    }
+    .form-name, .form-contact {
+        display: flex;
+    }
+    .con-img::before {
+        content: "";
+        position: absolute;
+        width: 684px;
+        height: 710px;
+        background: var(--purple);
+        border-radius: 710px;
+        z-index: -1;
+        top: 0px;
+        left: 0px;
+        box-shadow: 0 15px 40px 0 rgba(0, 0, 0, 0.8) inset;
     }
 }
