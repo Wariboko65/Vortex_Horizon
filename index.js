@@ -181,7 +181,7 @@ function themeChange() {
         newLogo.src = "Media/Picture3.png";
         fLogo.src = "Media/Picture3.png";
         newBack.src = "Media/ji_11zon.png";
-        fImage.style.backgroundImage = "url('Media/earth-the-world-earth-carbon-wallpaper-preview.jpg')";
+        fImage.style.backgroundImage = "url('Media/Mockup/rendering_019-watermark.jpg')";
     } else {
         document.body.classList.remove("dark");
         document.body.classList.add("light");
