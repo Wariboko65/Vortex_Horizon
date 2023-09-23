@@ -195,14 +195,18 @@ function themeChange() {
     } else {
         light();
     }
+    const currentTheme = document.body.classList.contains("dark") ? "dark" : "light";
+    localStorage.setItem("theme", currentTheme);
 }
-const currentTheme = document.body.classList.contains("dark") ? "dark" : "light";
-localStorage.setItem("theme", currentTheme);
 
 if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    dark();
+    if (localStorage.getItem === "dark") {
+        dark();
+    }
 } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
-    light();
+    if (localStorage.getItem === "light") {
+        light();
+    }
 }
 
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
