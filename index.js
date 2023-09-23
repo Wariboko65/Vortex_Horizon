@@ -166,48 +166,70 @@ conBtn.addEventListener("click", () => {
 
 // Theme changer
 let themeBtn = document.getElementsByClassName("theme")[0];
+let back = document.getElementsByClassName("backImg")[0];
+let fLogo = document.getElementsByClassName("logo")[0];
+let newBack = back.getElementsByTagName("img")[0];
+let logo = document.getElementsByClassName("logoo")[0];
+let newLogo = logo.getElementsByTagName("img")[0];
+let fImage = document.getElementsByClassName("vi")[0];
 
-function themeChange() {
-    let back = document.getElementsByClassName("backImg")[0];
-    let fLogo = document.getElementsByClassName("logo")[0];
-    let newBack = back.getElementsByTagName("img")[0];
-    let logo = document.getElementsByClassName("logoo")[0];
-    let newLogo = logo.getElementsByTagName("img")[0];
-    let fImage = document.getElementsByClassName("vi")[0];
-
-    if (document.body.classList.contains("light")) {
-        document.body.classList.remove("light");
-        document.body.classList.add("dark");
-        newLogo.src = "Media/Picture3.png";
-        fLogo.src = "Media/Picture3.png";
-        newBack.src = "Media/ji_11zon.png";
-        fImage.style.backgroundImage = "url('Media/rendering_019-watermark.jpg')";
-    } else {
-        document.body.classList.remove("dark");
-        document.body.classList.add("light");
-        newLogo.src = "Media/Picture2.png";
-        fLogo.src = "Media/Picture2.png";
-        newBack.src = "Media/2084267.jpg";
-        fImage.style.backgroundImage = "url('Media/b57b056dea139de08653eec3b8e16aee.jpg.jpg')";
-    }
-
-    if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        document.body.classList.remove("light");
-        document.body.classList.add("dark");
-    } else {
-        document.body.classList.remove("dark");
-        document.body.classList.add("light");
-    }
-    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
-        if (e.matches) {
-            document.body.classList.remove("light");
-            document.body.classList.add("dark");
-        } else {
-            document.body.classList.remove("dark");
-            document.body.classList.add("light");
-        }
-    });
+function dark() {
+    document.body.classList.remove("light");
+    document.body.classList.add("dark");
+    newLogo.src = "Media/Picture3.png";
+    fLogo.src = "Media/Picture3.png";
+    newBack.src = "Media/ji_11zon.png";
+    fImage.style.backgroundImage = "url('Media/rendering_019-watermark.jpg')";
 }
+function light() {
+    document.body.classList.remove("dark");
+    document.body.classList.add("light");
+    newLogo.src = "Media/Picture2.png";
+    fLogo.src = "Media/Picture2.png";
+    newBack.src = "Media/2084267.jpg";
+    fImage.style.backgroundImage = "url('Media/b57b056dea139de08653eec3b8e16aeepg.jpg')";
+}
+function themeChange() {
+    if (document.body.classList.contains("light")) {
+        dark();
+    } else {
+        light();
+    }
+    const currentTheme = document.body.classList.contains("dark") ? "dark" : "light";
+    localStorage.setItem("theme", currentTheme);
+}
+
+if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    dark();
+} else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
+    light();
+}
+
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+    if (e.matches) {
+        dark();
+    } else {
+        light();
+    }
+});
+
+window.addEventListener("load", () => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        dark();
+    } else if (savedTheme === "light") {
+        light();
+    }
+
+    const preserveTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (preserveTheme && !savedTheme) {
+        dark();
+        localStorage.setItem("theme", "dark");
+    } else if (!preserveTheme && !savedTheme) {
+        light();
+        localStorage.setItem("theme", "light");
+    }
+});
 
 themeBtn.addEventListener("click", () => {
     themeChange();
