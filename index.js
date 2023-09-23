@@ -200,13 +200,9 @@ function themeChange() {
 }
 
 if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    if (localStorage.getItem === "dark") {
-        dark();
-    }
+    dark();
 } else if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
-    if (localStorage.getItem === "light") {
-        light();
-    }
+    light();
 }
 
 window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
