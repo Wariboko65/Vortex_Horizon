@@ -187,7 +187,7 @@ function light() {
     newLogo.src = "Media/Picture2.png";
     fLogo.src = "Media/Picture2.png";
     newBack.src = "Media/2084267.jpg";
-    fImage.style.backgroundImage = "url('Media/b57b056dea139de08653eec3b8e16aeepg.jpg')";
+    fImage.style.backgroundImage = "url('Media/rendering_015-watermark.jpg')";
 }
 function themeChange() {
     if (document.body.classList.contains("light")) {
@@ -195,9 +195,9 @@ function themeChange() {
     } else {
         light();
     }
-    const currentTheme = document.body.classList.contains("dark") ? "dark" : "light";
-    localStorage.setItem("theme", currentTheme);
 }
+const currentTheme = document.body.classList.contains("dark") ? "dark" : "light";
+localStorage.setItem("theme", currentTheme);
 
 if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
     dark();
