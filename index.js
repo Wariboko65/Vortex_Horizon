@@ -28,7 +28,6 @@ function checkEmail() {
         emailErr.innerHTML = "";
         emailInput.style.borderBottom = "2px solid rgb(255, 255, 255)";
         form.submit();
-
     }
 }
 emailBttn.addEventListener("click", checkEmail);
