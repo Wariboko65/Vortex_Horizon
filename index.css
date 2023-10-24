@@ -10,7 +10,6 @@
     --purple: rgb(136, 29, 79);
     --pbtn: rgb(136, 29, 79);
     --pborder: rgb(136, 29, 79);
-    
 }
 .dark {
     --back: rgb(0, 0, 0);
@@ -36,6 +35,7 @@
     --smallfont: 0.75rem;
     --weight: 600;        
     --bweight: 800;        
+    transition: 0.5s ease-in-out;
 }
 *::selection {
     background: var(--lback);
@@ -623,7 +623,7 @@ main {
     position: absolute;
     inset: 0;
     background: var(--purple);
-    filter: blur(200px);
+    /* filter: blur(200px); */
     z-index: -2;
 }
 .form-container form > p:first-child {
@@ -650,6 +650,33 @@ main {
     gap: 10px;
     margin: 25px;
 }
+.fade-in {
+    opacity: 0;
+    transition: opacity .5s ease-in, transform 1s ease-in-out;
+    transform: translatey(100px);
+}
+.fade-in.appear {
+    transition: opacity .5s ease-in, transform 1s ease-in-out;
+    transform: translatey(0);
+    opacity: 1;
+}
+.from-left {
+    transform: translatex(-50%);
+}
+.from-right {
+    transform: translatex(50%);
+}
+ .from-left,
+ .from-right {
+    transition: opacity 0.5s ease-in, transform 1s ease-in-out;
+    opacity: 0;
+}
+.from-left.appear,
+.from-right.appear {
+    transition: opacity 0.5s ease-in, transform 1s ease-in-out;
+    transform: translatex(0);
+    opacity: 1;
+}
 .form-container label {
     font-weight: var(--weight);
     cursor: pointer;
@@ -658,6 +685,7 @@ main {
     background: transparent;
     border: none;
     outline: none;
+    font-size: 18px;
     padding: 10px 15px;
     color: var(--wHeader, var(--dHeader));
     border-bottom: 2px solid var(--wborder, var(--dborder));
