@@ -137,6 +137,7 @@ nav ul li img, .logo {
 }
 section {
     width: 90%;
+    line-height: 1.6;
     margin-inline: auto;
 }
 main {
