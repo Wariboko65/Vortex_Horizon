@@ -164,7 +164,7 @@ main {
         transform: scale(1);
     }
     50% {
-        transform: scale(1.3);
+        transform: scale(1.2);
     }
 }
 
@@ -212,6 +212,7 @@ main {
 .hero > input {
     padding: 8px 16px;
     border: none;
+    font-size: 18px;
     border-bottom: 2px solid var(--wborder, var(--dborder));
     outline: none;
     width: 180px;
@@ -369,9 +370,7 @@ button:hover, .button:hover {
 .port-bttn {
     margin-block-start: 15px;
 }
-.service-text > p:first-child {
-    margin-inline-start: 20px;
-}
+
 .service-text > p:nth-child(2)::before, 
 #portfolio p:nth-child(2)::before,
 .vision-text > p:first-child::before {
@@ -382,7 +381,6 @@ button:hover, .button:hover {
     width: 70px;
     border-radius: 50%;
     z-index: -1;
-    top: -15px;
 }
 .numb {
     color: var(--purple);
@@ -432,10 +430,15 @@ button:hover, .button:hover {
     margin-block-start: 30px;
 }
 .port-card {
+    transform: rotate(40deg);
     background: var(--purple);
+    transition: 0.5s ease-in-out;
     padding: 15px;
     cursor: pointer;
     overflow: hidden;
+}
+.port-card:hover {
+    transform: rotate(0);
 }
 .dev,
 .mod {
@@ -623,7 +626,7 @@ main {
     position: absolute;
     inset: 0;
     background: var(--purple);
-    filter: blur(200px);
+    /* filter: blur(200px); */
     z-index: -2;
 }
 .form-container form > p:first-child {
