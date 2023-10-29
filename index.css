@@ -289,7 +289,7 @@ button:hover, .button:hover {
     cursor: pointer;
     text-align: left;
     color: var(--wHeader, var(--dHeader));
-    margin: 10px;
+    margin: 30px 10px;
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-radius: 5px;
