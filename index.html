@@ -549,14 +549,14 @@
                         </div>
                         <div class="number">
                             <label for="number" class="muted">Phone Number</label>
-                            <input type="text" name="Phone Number" placeholder="Enter your phone number" id="number" required>
+                            <input type="text" name="Phone Number" placeholder="Enter your phone number" id="number" pattern="\+?[0-9]+" required>
                         </div>
                     </div>
                     <div class="form-message">
                         <label for="message" class="muted">Message</label>
                         <textarea id="message" name="Message" placeholder="Enter your message" required></textarea>
                     </div>
-                    <button type="submit" class="contact-btn">Submit</button>
+                    <button type="button" class="contact-btn">Submit</button>
                     <span id="msg"></span>
                     <div class="secondary-contact">
                         <div class="mail">

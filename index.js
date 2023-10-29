@@ -12,10 +12,10 @@ navBtn.addEventListener("click", () => {
 // Email Validation
 let emailBttn = document.getElementsByTagName("button")[0];
 function checkEmail() {
-    const emailInput = document.getElementsByTagName("input")[0];
+    const emailInput = document.querySelector("[type='email']");
     let emailErr = document.getElementById("emailErr");
     let form = document.getElementsByClassName("hero")[0];
-    if(emailInput.validity.patterMismatch || emailInput.value.trim() == "") {
+    if(emailInput.validity.patternMismatch || emailInput.value.trim() == "") {
         emailErr.innerHTML = "Valid email required";
         emailInput.style.borderBottom = "2px solid tomato";
         emailErr.style.opacity = "1";
@@ -97,14 +97,47 @@ form.addEventListener('submit', e => {
 e.preventDefault();
 fetch(scriptURL, {method: 'POST', body: new FormData(form)})
     .then(response => {
-        msg.innerHTML = "Message sent successfully"
+        msg.innerHTML = "Message sent successfully";
         setTimeout(function(){
-            msg.innerHTML = ""
-        },5000)
-        form.reset()
+            msg.innerHTML = "";
+        }, 2000)
+        form.reset();
     })
     .catch(error => console.error('Error!', error.message));
 });
+
+
+function formValidation() {
+    let firstName = document.querySelector("[name='First Name']");
+    let lastName = document.querySelector("[name='Last Name']");
+    let mail = document.querySelector("[name='Email']");
+    let phone = document.querySelector("[name='Phone Number']");
+    let text = document.querySelector("[name='Message']");
+    let isValid = true;
+    let firstEmptyInput = null;
+
+    const contactDeatiles = [firstName, lastName, mail, phone, text];
+
+    for (let i of contactDeatiles) {
+        if (i.validity.patternMismatch || i.value.trim() == "") {
+            i.style.borderBottom = "2px solid tomato";
+            isValid = false;
+            if (firstEmptyInput == null) {
+                firstEmptyInput = i;
+            }
+        } else {
+            i.style.borderBottom = "2px solid gray";
+        }
+    }
+    if (!isValid) {
+        firstEmptyInput.focus();
+        return;
+    }
+
+    form.submit();
+}
+let cdbttn = document.querySelector("[class='contact-btn']");
+cdbttn.addEventListener("click", formValidation);
 
 const one = document.getElementsByClassName("one");
 const dot = document.getElementsByClassName("dot");
